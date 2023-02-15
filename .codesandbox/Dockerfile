@@ -1,20 +1,13 @@
 # CodeSandbox supports debian & ubuntu based images
 FROM ubuntu
- 
+
 # Example; install htop by default
 RUN apt update -y && apt install -y htop
+FROM php:7.4-fpm
+RUN apt-get update && apt-get install -y \
+		libfreetype6-dev \
+		libjpeg62-turbo-dev \
+		libpng-dev \
+	&& docker-php-ext-configure gd --with-freetype --with-jpeg \
+	&& docker-php-ext-install -j$(nproc) gd
 
-# The project will be mounted in /workspace by default
-
-# Every new shell will open inside the built container
-
-# On top of this build, we install `zsh`, `git` and `docker` as additional
-# Docker layers.
-
-
-# Install PHP & Composer
-RUN apt update -y && apt install -y curl php-cli php-mbstring git unzip && \
-  cd ~ && \
-  curl -sS https://getcomposer.org/installer -o composer-setup.php && \
-  php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
-  composer --version
