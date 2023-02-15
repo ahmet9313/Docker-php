@@ -1,6 +1,8 @@
 # CodeSandbox supports debian & ubuntu based images
 FROM ubuntu
- 
+FROM php:7.4-apache
+COPY . /var/www/html/
+
 # Example; install htop by default
 RUN apt update -y && apt install -y htop
 

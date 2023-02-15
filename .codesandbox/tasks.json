@@ -8,6 +8,14 @@
       "name": "whereis htop",
       "command": "whereis htop",
       "runAtStart": true
+    },
+    "php -S localhost:80": {
+      "name": "php -S localhost:80",
+      "command": "php -S localhost:80"
+    },
+    "php -S localhost:8000": {
+      "name": "php -S localhost:8000",
+      "command": "php -S localhost:8000"
     }
   }
 }

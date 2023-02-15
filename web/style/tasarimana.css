@@ -1,0 +1,13 @@
+*{
+    padding:0;
+    margin:0;
+    font-family: shi;
+    outline:1px solid red;
+}
+body{
+    background-image: url("girisarka.png");
+}
+@font-face {
+    font-family: shi;
+    src: url("fonts/AOTFShinGoProRegular.woff");
+}
