@@ -10,3 +10,11 @@ RUN apt update -y && apt install -y htop
 
 # On top of this build, we install `zsh`, `git` and `docker` as additional
 # Docker layers.
+
+
+# Install PHP & Composer
+RUN apt update -y && apt install -y curl php-cli php-mbstring git unzip && \
+  cd ~ && \
+  curl -sS https://getcomposer.org/installer -o composer-setup.php && \
+  php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
+  composer --version
