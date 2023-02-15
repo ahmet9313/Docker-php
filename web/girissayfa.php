@@ -40,8 +40,8 @@
                         transform: scale(1.1);
                     }
                     #aciklamay{
-                        -ms-overflow-style: none;  /* IE and Edge */
-                        scrollbar-width: none;  /* Firefox */
+                        -ms-overflow-style: none;
+                        scrollbar-width: none;
                     }
                     #aciklamay::-webkit-scrollbar {
                         display: none;
