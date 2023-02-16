@@ -1,12 +1,13 @@
 # CodeSandbox supports debian & ubuntu based images
 FROM ubuntu
-FROM php:8.1-apache-bullseye
-COPY src/ /var/www/html/
+FROM php:8.1-apache
 
 # Example; install htop by default
-RUN apt update -y && apt install -y htop
+RUN apt update -y && apt install -y htop nodejs npm
 
 # The project will be mounted in /workspace by default
+COPY . /var/www/html/
+#WORKDIR is /var/www/html
 
 # Every new shell will open inside the built container
 
